@@ -1,0 +1,17 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        res=0
+        y=x
+        if (x<0): 
+            return False
+        while y!=0:
+            digit = int(math.fmod(y,10))
+            y=int(y/10)
+            res=res*10+digit
+        if(res==x):
+            return True
+        else:
+            False
+            
+            
+        
