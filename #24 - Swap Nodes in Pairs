@@ -1,0 +1,44 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(0,head)
+        prev = dummy
+        curr = head
+
+        while curr and curr.next:
+            #save ptrs
+            print("dummy1",dummy)
+            nextpair = curr.next.next
+            print("dummy2",dummy)
+            second = curr.next
+            print("dummy3",dummy)
+            
+            # reverse this ptr
+            curr.next = nextpair
+            print("curr:",curr)
+            print("head:",head)
+            print("dummy4",dummy)
+            second.next = curr
+            print("dummy5",dummy)
+            prev.next = second           
+            print("dummy6",dummy)
+            
+            #update Ptr
+            prev = curr
+            print("dummy7",dummy)
+            curr = nextpair
+            print("dummy8",dummy)
+            print("second:",second)
+            print("head:",head)
+            print("prev:",prev)
+            print("curr:",curr)
+            print("nextpair:",nextpair)
+
+            
+        return dummy.next
+            
+        
